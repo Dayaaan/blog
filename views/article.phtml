@@ -1,0 +1,26 @@
+<h2><i class="fa fa-home"></i> Accueil</h2>
+
+
+	<?php foreach ($articleList as $article) : ?>
+
+
+		<li class="post">
+        <h3>
+            <i class="fa fa-hand-o-right"></i>
+     
+            <a href="../public/showArticle.php?id=<?= $article['id'] ?>" title="Consulter l'article">
+                <?= $article['title'] ?>               
+            </a>
+        </h3>
+        <!-- Seul un extrait de l'article du blog est affiché -->
+        <article><?= $article['content'] ?></article>
+        <br><br>
+        <small>
+            Rédigé par <?= $article['author_firstname'] . " " . $article['author_lastname'] ?> le <?= $article['created_at'] ?>  
+        </small>
+    </li>
+
+		
+	<?php endforeach; ?>
+</ul>
+        

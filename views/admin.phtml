@@ -1,0 +1,45 @@
+<h2><i class="fa fa-cogs"></i> Panneau d'administration</h2>
+
+<nav>
+    <a href="createPost.php">Rédiger un nouvel article</a>
+</nav>
+
+<table>
+    <caption>Liste des articles</caption>
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Article</th>
+            <th>Auteur</th>
+            <th>Catégorie</th>
+            <th>Edit/Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($articleList as $article) : ?>
+             <tr>
+                <td>
+                    <a href="../public/showArticle.php?id=<?= $article['id'] ?>" title="    Consulter l'article">
+                        <?= $article['title'] ?>               
+                    </a>
+                </td>
+                <td>
+                    <?= substr($article["content"],0,100) ?></td>
+                <td>
+                    <?= $article['author_firstname'] . " " . $article['author_lastname'] ?>
+                </td>
+                <td>
+                    <?= $article['category_name'] ?>
+                        
+                </td>
+                <td>
+                    <a class="edit" href="edit_post.php?id=5"> <i class="fas fa-pencil-alt"></i>
+                    </a> 
+                    <a class="remove" href="delete_post.php?id=5"> <i class="fas fa-trash-alt"></i> 
+                    </a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+                   
+            </tbody>
+</table>    </main
