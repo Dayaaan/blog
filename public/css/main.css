@@ -36,7 +36,7 @@ h1, h2 {
     letter-spacing: 0.1em;
 }
 
-header {
+header, footer {
     /* structure */
     height: 128px;
     margin-bottom: 2em;
@@ -50,7 +50,7 @@ header nav a {
     margin-right: 2em;
 }
 
-footer, main {
+main {
     margin: 0 auto;
     width: 85%;
 }
