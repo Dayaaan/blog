@@ -62,6 +62,9 @@ footer {
 .edit {
     padding-right: 1.5rem;
 }
+.hideID {
+    display: none;
+}
 
 
 /*

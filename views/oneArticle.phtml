@@ -1,0 +1,64 @@
+<h2><i class="fa fa-home"></i> Article</h2>
+
+ <ul>   
+	<?php foreach ($articleById as $article) : ?>
+
+        
+		<li class="post">
+        <h3>
+            <i class="fa fa-hand-o-right"></i>
+                <?= $article['title'] ?>               
+        </h3>
+        <article><?= $article['content'] ?></article>
+        <br><br>
+        <small>
+            Rédigé par <?= $article['author_firstname'] . " " . $article['author_lastname'] ?> le <?= $article['created_at'] ?>  
+        </small>
+    </li>
+	
+	<?php endforeach; ?>
+</ul>
+<br><br>
+<h2><i class="fas fa-comments"></i> Les commentaires</h2>
+ <ul>   
+    <?php foreach ($commentList as $comment) : ?>
+
+
+        <li class="post">
+        <h3>
+            <i class="fa fa-hand-o-right"></i>
+                <?= $comment['pseudo'] ?>               
+        </h3>
+        <article><?= $comment['content'] ?></article>
+        <br><br>
+        <small>
+            Rédigé le <?= $comment['created_at'] ?>  
+        </small>
+    </li>
+    <hr>
+    
+    <?php endforeach; ?>
+</ul>
+<form class="generic-form" method="post">
+    <fieldset>
+        <legend><i class="fa fa-sticky-note-o"></i> Postez un commentaire</legend>
+        <ul>
+            <li>
+                <label for="pseudo">Pseudo:</label>
+                <input type="text" id="pseudo" name="pseudo">
+            </li>
+            <li>
+                <label class="textarea" for="content">Commentaire :</label>
+                <textarea id="contents" name="content" rows="15"></textarea>
+            </li>
+            <li>
+                <button class="button button-primary" type="submit" name="submit">Enregistrer</button>
+            </li>
+        </ul>
+    </fieldset>
+</form> 
+<a class="return" href="../public/article.php">Retourner a la page Article</a>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

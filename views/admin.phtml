@@ -19,7 +19,7 @@
         <?php foreach ($articleList as $article) : ?>
              <tr>
                 <td>
-                    <a href="../public/showArticle.php?id=<?= $article['id'] ?>" title="    Consulter l'article">
+                    <a href="../public/oneArticle.php?id=<?= $article['id'] ?>" title="    Consulter l'article">
                         <?= $article['title'] ?>               
                     </a>
                 </td>
@@ -33,9 +33,9 @@
                         
                 </td>
                 <td>
-                    <a class="edit" href="edit_post.php?id=5"> <i class="fas fa-pencil-alt"></i>
+                    <a class="edit" href="editArticle.php?id=<?= $article['id']; ?>"> <i class="fas fa-pencil-alt"></i>
                     </a> 
-                    <a class="remove" href="delete_post.php?id=5"> <i class="fas fa-trash-alt"></i> 
+                    <a class="remove" href="delete_post.php?id=<?= $article['id']; ?>"> <i class="fas fa-trash-alt"></i> 
                     </a>
                 </td>
             </tr>

@@ -8,11 +8,10 @@
         <h3>
             <i class="fa fa-hand-o-right"></i>
      
-            <a href="../public/showArticle.php?id=<?= $article['id'] ?>" title="Consulter l'article">
+            <a href="../public/oneArticle.php?id=<?= $article['id'] ?>" title="Consulter l'article">
                 <?= $article['title'] ?>               
             </a>
         </h3>
-        <!-- Seul un extrait de l'article du blog est affiché -->
         <article><?= $article['content'] ?></article>
         <br><br>
         <small>

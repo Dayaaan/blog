@@ -3,11 +3,9 @@ include '../services/blogServices.php';
 include '../services/tools.php';
 
 
-if ( empty($_POST["title"]) || empty($_POST["content"]) ) {
+if (isset($_POST["submit"])) {
 
-	die('Veuillez remplir les champs');
-
-} else {
+	$id_article = $_POST["id_article"];
 
 	$title = clean_text($_POST["title"]);
 
@@ -17,9 +15,8 @@ if ( empty($_POST["title"]) || empty($_POST["content"]) ) {
 
 	$category_id = $_POST['category'];
 
-	createArticle($author_id, $title, $content, $category_id);
+	updatePost($id_article,$author_id, $title, $content, $category_id);
 
-	header("Location:article.php");
+	header("Location:admin.php");
 	exit;
 }
-
