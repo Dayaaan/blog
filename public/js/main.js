@@ -21,6 +21,7 @@ $(function() {
 			
 
 		} else {
+
 			$('.error1').html("");
 		}
 
@@ -33,6 +34,7 @@ $(function() {
 			event.preventDefault();
 			
 		} else {
+			
 			$('.error2').html("");
 		}
 
@@ -68,7 +70,7 @@ $(function() {
 		} else {
 
 			$('.error2').html("");
-			
+
 		}
 
 	})
