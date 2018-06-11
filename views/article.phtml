@@ -9,10 +9,10 @@
             <i class="fa fa-hand-o-right"></i>
      
             <a href="../public/oneArticle.php?id=<?= $article['id'] ?>" title="Consulter l'article">
-                <?= $article['title'] ?>               
+                <?= clean_text($article['title']) ?>               
             </a>
         </h3>
-        <article><?= $article['content'] ?></article>
+        <article><?= clean_text($article['content']) ?></article>
         <br><br>
         <small>
             Rédigé par <?= $article['author_firstname'] . " " . $article['author_lastname'] ?> le <?= $article['created_at'] ?>  

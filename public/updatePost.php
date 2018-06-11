@@ -1,6 +1,9 @@
 <?php 
+session_start();
+include 'isConnected.php';
 include '../services/blogServices.php';
 include '../services/tools.php';
+
 
 
 if (isset($_POST["submit"])) {

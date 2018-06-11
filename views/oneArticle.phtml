@@ -1,22 +1,19 @@
 <h2><i class="fa fa-home"></i> Article</h2>
 
  <ul>   
-	<?php foreach ($articleById as $article) : ?>
-
         
 		<li class="post">
         <h3>
             <i class="fa fa-hand-o-right"></i>
-                <?= $article['title'] ?>               
+                <?= clean_text($article['title']) ?>               
         </h3>
-        <article><?= $article['content'] ?></article>
+        <article><?= clean_text($article['content']) ?></article>
         <br><br>
         <small>
             Rédigé par <?= $article['author_firstname'] . " " . $article['author_lastname'] ?> le <?= $article['created_at'] ?>  
         </small>
     </li>
 	
-	<?php endforeach; ?>
 </ul>
 <br><br>
 <h2><i class="fas fa-comments"></i> Les commentaires</h2>
@@ -27,9 +24,9 @@
         <li class="post">
         <h3>
             <i class="fa fa-hand-o-right"></i>
-                <?= $comment['pseudo'] ?>               
+                <?= clean_text($comment['pseudo']) ?>               
         </h3>
-        <article><?= $comment['content'] ?></article>
+        <article><?= clean_text($comment['content']) ?></article>
         <br><br>
         <small>
             Rédigé le <?= $comment['created_at'] ?>  
@@ -45,11 +42,13 @@
         <ul>
             <li>
                 <label for="pseudo">Pseudo:</label>
-                <input type="text" id="pseudo" name="pseudo">
+                <input type="text" id="pseudo" name="pseudo"><br>
+                <em class="error1" style="color: red;"></em>
             </li>
             <li>
                 <label class="textarea" for="content">Commentaire :</label>
-                <textarea id="contents" name="content" rows="15"></textarea>
+                <textarea id="contents" name="content" rows="15"></textarea><br>
+                <em class="error2" style="color: red;"></em>
             </li>
             <li>
                 <button class="button button-primary" type="submit" name="submit">Enregistrer</button>

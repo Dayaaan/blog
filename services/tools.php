@@ -12,9 +12,14 @@ function pre($thing) {
 
 function clean_text($string) {
 	$string = trim($string);
-	$string = stripslashes($string);
-	$string = htmlspecialchars($string); 
 	$string = htmlentities($string);
-	$string = addslashes($string);
 	return $string;
+}
+
+
+function writeLog($thing) {
+	if (is_array($thing)) {
+		$thing = print_r($thing, true);
+	}
+	file_put_contents('../logs/log', PHP_EOL . date('Y-m-d H:i:s') . " " . $thing, FILE_APPEND);
 }

@@ -1,10 +1,12 @@
 <?php
+session_start();
+
 include '../services/blogServices.php';
 include '../services/tools.php';
 include '../views/header.phtml';
 
 $id = $_GET['id'];
-$articleById = getArticleById($id);
+$article = getArticleById($id);
 
 $commentList = getCommentListByArticleID($id);
 
@@ -16,9 +18,9 @@ if(isset($_POST['submit'])) {
 
 	} else {
 
-		$pseudo = clean_text($_POST["pseudo"]);
+		$pseudo = $_POST["pseudo"];
 
-		$content = clean_text($_POST["content"]); 
+		$content = $_POST["content"]; 
 
 		$article_id = $id;
 

@@ -62,8 +62,13 @@ footer {
 .edit {
     padding-right: 1.5rem;
 }
-.hideID {
+
+.hide {
     display: none;
+}
+.welcome {
+    font-weight: bold;
+    color: red;
 }
 
 

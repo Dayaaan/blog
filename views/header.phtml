@@ -6,6 +6,11 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="../public/css/main.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/form.css">
+    <script
+              src="https://code.jquery.com/jquery-3.3.1.min.js"
+              integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+              crossorigin="anonymous"></script>
+        
 </head>
 <body>
     <header class="blog-header">
@@ -14,7 +19,18 @@
         	</a>
         </h1>
         <nav>
-            <a href="admin.php"><i class="fa fa-cogs"></i> Administration</a>
+            <a href="login.php" class="login"><i class="fas fa-user"></i> - Login</a>
+            <?php if ( isset($_SESSION['id']) ) : ?>
+                <?php $user_name = getUserById(); ?>
+                <a href="" class="welcome"><?= "Bonjour" . " " . $user_name; ?></a>
+                <a href="admin.php"><i class="fa fa-cogs"></i> - Administration</a>
+                <a href="logout.php"><i class="fas fa-sign-out-alt"></i></i> - Deconnection</a>
+                <style>
+                    .login {
+                        display: none;
+                    }
+                </style>
+            <?php endif; ?>
         </nav>
     </header>
 	<main class="container">

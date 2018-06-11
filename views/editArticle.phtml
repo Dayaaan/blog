@@ -5,27 +5,28 @@
     <fieldset>
         <legend><i class="fa fa-sticky-note-o"></i> Article</legend>
         <ul>
-            <li class="hideID">
-                <label for="id_article">Article numéro:</label>
-                <input type="text" id="id_article" name="id_article" value="<?php foreach ($articleById as $article) : ?><?= $article['id']; ?><?php endforeach; ?>">
+            <li class="">
+                <label for="id_article">Article numéro: <?= $article['id']; ?></label>
+                <input type="hidden" id="id_article" name="id_article" value="<?= $article['id']; ?>">
             </li>
             <li>
                 <label for="title">Titre :</label>
-                <input type="text" id="title" name="title" value="<?php foreach ($articleById as $article) : ?><?= $article['title']; ?><?php endforeach; ?>">
+                <input type="text" id="title" name="title" value="<?= $article['title']; ?>">
             </li>
             <li>
                 <label class="textarea" for="content">Article :</label>
-                <textarea id="contents" name="content" rows="15"><?php foreach ($articleById as $article) : ?><?= $article['content']; ?><?php endforeach; ?></textarea>
+                <textarea id="contents" name="content" rows="15"><?= $article['content']; ?></textarea>
             </li>
             <li>
                 <label for="author">Auteur :</label>
                 <select id="author" name="author">
+
                     <?php foreach ($authorList as $author) : ?>
                         
-                         <option value="<?= $author['id']; ?>">
+                         <option value="<?= $author['id']; ?>" 
+                        <?= $author['id'] == $article['author_id'] ? 'selected' : '' ?>>
                             <?= $author['firstname'] . " " . $author['lastname']; ?>
                          </option>
-
 
                      <?php endforeach; ?>
                 </select>
@@ -33,11 +34,14 @@
             <li>
                 <label for="category">Catégorie :</label>
                 <select id="category" name="category">
-                        <option value="1">Jeux-Vidéos</option>
-                        <option value="2">Film</option>
-                        <option value="3">Sport</option>
-                        <option value="4">Musique</option>
-                        <option value="5">Informatique</option>
+                        <?php foreach ($categoryList as $category) : ?>
+                        
+                         <option value="<?= $category['id']; ?>" 
+                        <?= $category['id'] == $article['category_id'] ? 'selected' : '' ?>>
+                            <?= $category['name']; ?>
+                         </option>
+
+                     <?php endforeach; ?>
                 </select>
             </li>
             <li>

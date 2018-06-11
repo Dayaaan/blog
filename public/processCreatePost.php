@@ -1,6 +1,9 @@
 <?php 
+session_start();
+include 'isConnected.php';
 include '../services/blogServices.php';
 include '../services/tools.php';
+
 
 
 if ( empty($_POST["title"]) || empty($_POST["content"]) ) {
@@ -9,9 +12,9 @@ if ( empty($_POST["title"]) || empty($_POST["content"]) ) {
 
 } else {
 
-	$title = clean_text($_POST["title"]);
+	$title = $_POST["title"];
 
-	$content = clean_text($_POST["content"]); 
+	$content = $_POST["content"]; 
 
 	$author_id = $_POST["author"];
 
