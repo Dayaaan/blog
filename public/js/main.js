@@ -11,21 +11,21 @@ $(function() {
 		
 
 		
-		if ($('#pseudo').val() == "") {
+		if ( ! $('#Pseudo').val() ) {
 
-			error = "Veuillez remplir le champ pseudo";
+			error = "saissisez un texte";
 
-			$('.error1').html(error);
+			$('.error3').html(error);
+
 			event.preventDefault();
-			// si il y'a une erreur il ne soumet pas le formulaire
 			
-
 		} else {
 
-			$('.error1').html("");
+			$('.error3').html("");
+
 		}
 
-		if ($('#contents').val() == "") {
+		if ( ! $('#contents').val() ) {
 
 			error = "saissisez un texte";
 
@@ -34,8 +34,9 @@ $(function() {
 			event.preventDefault();
 			
 		} else {
-			
+
 			$('.error2').html("");
+
 		}
 
 	})

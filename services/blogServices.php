@@ -79,9 +79,9 @@ function getArticleById($id) {
 		SELECT article.id,title,content,created_at,author.id AS author_id,author.firstname AS author_firstname, author.lastname AS author_lastname, category_id
 		FROM article
 		JOIN author ON author.id = article.author_id
-		WHERE article.id LIKE '$id'
+		WHERE article.id LIKE ?
 		");
-	$statement->execute();
+	$statement->execute([$id]);
 	$article = $statement->fetch(PDO::FETCH_ASSOC);
 	return $article;
 }
@@ -112,8 +112,8 @@ function getAuthorById($id) {
 
 function deleteArticle($id) {
 	$bdd = getConnection();
-	$statement = $bdd->prepare("DELETE FROM article WHERE id = $id");
-	$statement->execute();
+	$statement = $bdd->prepare("DELETE FROM article WHERE id = ?");
+	$statement->execute([$id]);
 }
 
 function getCategoryList() {

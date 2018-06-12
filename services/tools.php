@@ -11,8 +11,9 @@ function pre($thing) {
 }*/
 
 function clean_text($string) {
+	$string = strip_tags($string); //enlever les balises html
 	$string = trim($string);
-	$string = htmlentities($string);
+	$string = htmlentities($string); 
 	return $string;
 }
 
@@ -23,3 +24,11 @@ function writeLog($thing) {
 	}
 	file_put_contents('../logs/log', PHP_EOL . date('Y-m-d H:i:s') . " " . $thing, FILE_APPEND);
 }
+//PHP_EOL : retour a la ligne
+
+// function myGet($key) {
+// 	if (isset($_GET[$key]) == false)  {
+// 		return null;
+// 	}
+// 	return $_GET[$key];
+// }
