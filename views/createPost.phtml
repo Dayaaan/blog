@@ -1,19 +1,19 @@
 <h2><i class="fa fa-pencil"></i> Rédiger un nouvel article</h2>
 
 <!-- Formulaire de saisie d'un nouvel article -->
-<form class="generic-form" action="../public/processCreatePost.php" method="post">
+<form id="form" class="generic-form" action="processCreatePost.php" method="post">
     <fieldset>
         <legend><i class="fa fa-sticky-note-o"></i> Nouvel article</legend>
         <ul>
             <li>
                 <label for="title">Titre :</label>
                 <input type="text" id="title" name="title"><br>
-                <em class="error1" style="color: red;"></em>
+                <em class="errorTitle" style="color: red;"></em>
             </li>
             <li>
                 <label class="textarea" for="content">Article :</label>
                 <textarea id="contents" name="content" rows="15"></textarea><br>
-                <em class="error2" style="color: red;"></em>
+                <em class="errorContents" style="color: red;"></em>
             </li>
             <li>
                 <label for="author">Auteur :</label>
@@ -49,3 +49,5 @@
 
 
 <br><br><br><br><br><br><br><br><br><br>
+
+<script src="../public/js/createPost.js"></script>
